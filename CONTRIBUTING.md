@@ -53,9 +53,8 @@ There are several channels where you can get answers from the community
 or the maintainers of this project:
 
 - Our public forum, [Kong Nation](https://discuss.konghq.com), is great for
-  asking questions, giving advice, and staying up-to-date with the latest
-  announcements. Kong Nation is frequented by Kong maintainers.
-- Two chat channels are used by the community, but are rarely visited by Kong
+  asking questions, giving advice, and staying up-to-date with the latest announcements. Kong Nation is frequented by Kong maintainers.
+- Two chat channels are used by the community but are rarely visited by Kong
   maintainers:
   - [Gitter](https://gitter.im/Kong/kong)
   - IRC, registered on freenode as
@@ -122,7 +121,7 @@ https://github.com/Kong/docs.konghq.com/
 ### Proposing a new plugin
 
 We **do not** accept new plugins into the core repository. The plugins that are
-currently part of this repository are there because of historical reasons, but
+currently part of this repository is there because of historical reasons, but
 will be pushed into separate repositories in the foreseeable future.
 
 If you wish to write a new plugin for your own needs, you should start by
@@ -201,13 +200,13 @@ When contributing to Kong, this distinction is important. Please ensure that
 you are basing your work on top of the appropriate branch, it might save you
 some time down the road!
 
-If you have write access to the GitHub repository, please follow the following
+If you have to write access to the GitHub repository, please follow the following
 naming scheme when pushing your branch(es):
 
 - `feat/foo-bar` for new features
 - `fix/foo-bar` for bug fixes
 - `tests/foo-bar` when the change concerns only the test suite
-- `refactor/foo-bar` when refactoring code without any behavior change
+- `refactor/foo-bar` when refactoring code without any behaviour change
 - `style/foo-bar` when addressing some style issue
 - `docs/foo-bar` for updates to the README.md, this file, or similar documents
 
@@ -221,7 +220,7 @@ logical units of work. You are free to propose a patch with one or many
 commits, as long as their atomicity is respected. This means that no unrelated
 changes should be included in a commit.
 
-For example: you are writing a patch to fix a bug, but in your endeavour, you
+For example You are writing a patch to fix a bug, but in your endeavour, you
 spot another bug. **Do not fix both bugs in the same commit!**. Finish your
 work on the initial bug, propose your patch, and come back to the second bug
 later on. This is also valid for unrelated style fixes, refactorings, etc...
@@ -233,7 +232,7 @@ commit history? Will they find unrelated changes in a particular commit? They
 shouldn't!
 
 Writing meaningful commit messages that follow our commit message format will
-also help you respect this mantra (see the below section).
+also, help you respect this mantra (see the below section).
 
 [Back to TOC](#table-of-contents)
 
