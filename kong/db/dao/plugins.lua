@@ -310,13 +310,25 @@ end
 
 
 function Plugins:select_by_cache_key(key)
-  -- try new format
+
+  -- if migrated, disable this translator function
+  local schema_state = assert(self.db:schema_state())
+  if schema_state:is_migration_executed("core", "001_14_to_15") then
+    Plugins.select_by_cache_key = self.super.select_by_cache_key
+    return self.super.select_by_cache_key(key)
+  end
+
+  -- otherwise, we're either not started migrating, or we're currently migrating
+
+  -- first try new format
   local entity, new_err = self.super.select_by_cache_key(self, key)
   if entity then
     return entity
   end
 
-  -- try old format
+  -- then fallback to old format
+  -- this allows using the cache_key even while we're still migrating -
+  -- the records that already have a `cache_key` field will use it ASAP
   local row, old_err = self.strategy:select_by_cache_key_migrating(key)
   if row then
     return self:row_to_entity(row)

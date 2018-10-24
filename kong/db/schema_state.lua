@@ -290,5 +290,21 @@ function SchemaState:is_up_to_date()
 end
 
 
+function SchemaState:is_migration_executed(subsystem, migration_name)
+  local subsys = self[subsystem]
+  if not subsys or not subsys.executed_migrations then
+    return false
+  end
+
+  for _, migration in ipairs(subsys.executed_migrations) do
+    if migration.name == name then
+      return true
+    end
+  end
+
+  return false
+end
+
+
 return SchemaState
 
